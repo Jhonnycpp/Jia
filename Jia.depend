@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1535046188 source:c:\users\jhonatan.ramos\desktop\jia\main.cpp
+	<iostream>
+
+1535046146 source:c:\users\jhonatan.ramos\desktop\jia\neuron.cpp
+	"Neuron.h"
+
+1535046313 c:\users\jhonatan.ramos\desktop\jia\neuron.h
+	<vector>
+
