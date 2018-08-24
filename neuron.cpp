@@ -13,8 +13,13 @@ Neuron::~Neuron()
     //dtor
 }
 
-bool Neuron::operator==(Neuron& l)const{
-    return false;
+float Neuron::getWeight()
+{
+    return this->weight;
+}
+void Neuron::setWeight(float weight)
+{
+    this->weight = weight;
 }
 
 Neurons::Neurons()
@@ -29,19 +34,24 @@ Neurons::~Neurons()
 
 void Neurons::add(Neuron* neuron)
 {
+    this->push_back(neuron);
+}
 
+void Neurons::add(Neuron neuron)
+{
+    this->push_back(&neuron);
 }
 
 Neuron* Neurons::take(int index)
 {
-    return nullptr;
+    Neuron* neuron = this->at(index);
+    this->removeAt(index);
+    return neuron;
 }
 
 void Neurons::removeAt(Neuron* neuron)
 {
-    auto e = std::find(this->begin(), this->end(), neuron);
-    if (e != this->end())
-        this->erase(e);
+    remove(this->begin(), this->end(), neuron);
 }
 
 void Neurons::removeAt(int index)

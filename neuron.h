@@ -24,7 +24,7 @@ public:
     void setWeight(float weight);
     void getActive();
     bool setActive(bool active);
-    bool operator==(Neuron& l)const;
+
 protected:
     Neuron* next;
     Neuron* prior;
@@ -33,12 +33,13 @@ protected:
     bool active;
 };
 
-class Neurons: public vector<Neuron>
+class Neurons: public vector<Neuron*>
 {
 public:
     Neurons();
     virtual ~Neurons();
     void add(Neuron* neuron);
+    void add(Neuron neuron);
     Neuron* take(int index);
     void removeAt(Neuron* neuron);
     void removeAt(int index);
