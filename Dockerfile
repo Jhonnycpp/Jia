@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:edge
 
 RUN apk update \
     apk upgrade
@@ -10,6 +10,7 @@ RUN apk add cmake \
     llvm-static \
     llvm-dev \
     clang-static \
-    clang-dev
+    clang-dev \
+    mingw-w64-gcc
 
 WORKDIR /src

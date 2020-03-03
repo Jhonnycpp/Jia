@@ -50,7 +50,7 @@ if [[ "${DOCKER_PARAM}" == true ]]; then
     DOCKER_VERSION=$(docker --version)
     DOCKER_VERSION=$(echo $DOCKER_VERSION | tr '[:upper:]' '[:lower:]')
     echo -e "${COLOR_LIGHT_GREEN}Running ${DOCKER_VERSION}.${COLOR_NC}" 
-    docker container run -v `pwd`:/src --rm test /bin/sh -c "${CMD}"
+    docker container run -v `pwd`:/src --rm jia /bin/sh -c "${CMD}"
 else
     eval ${CMD}
 fi
