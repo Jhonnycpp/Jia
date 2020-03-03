@@ -4,13 +4,230 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "echo",
+            "label": "Clean",
             "type": "shell",
-            "command": "echo Hello",
-            "group": {
-                "kind": "build",
-                "isDefault": true
+            "command": "./scripts/clean.sh",
+            "presentation": {
+                "clear": true,
+                "focus": false,
             }
-        }
+        },
+        {
+            "label": "Local - Windows x64",
+            "type": "shell",
+            "command": "./scripts/build.sh --os windows --arch x86_64",
+            "presentation": {
+                "clear": true,
+                "focus": false,
+            }
+        },
+        {
+            "label": "Local - Windows x86",
+            "type": "shell",
+            "command": "./scripts/build.sh --os windows --arch i686",
+            "presentation": {
+                "clear": true,
+                "focus": false,
+            }
+        },
+        {
+            "label": "Local - Linux x64",
+            "type": "shell",
+            "command": "./scripts/build.sh --os linux --arch x86_64",
+            "presentation": {
+                "clear": true,
+                "focus": false,
+            }
+        },
+        {
+            "label": "Local - Linux x86",
+            "type": "shell",
+            "command": "./scripts/build.sh --os linux --arch x86",
+            "presentation": {
+                "clear": true,
+                "focus": false,
+            }
+        },
+        {
+            "label": "Local - Mac x64",
+            "type": "shell",
+            "command": "./scripts/build.sh --os mac --arch x86_64",
+            "presentation": {
+                "clear": true,
+                "focus": false,
+            }
+        },
+        {
+            "label": "Local - Mac x86",
+            "type": "shell",
+            "command": "./scripts/build.sh --os mac --arch x86",
+            "presentation": {
+                "clear": true,
+                "focus": false,
+            }
+        },
+        {
+            "label": "Local - Android armeabi-v7a",
+            "type": "shell",
+            "command": "./scripts/build.sh --os android --arch armeabi-v7a",
+            "presentation": {
+                "clear": true,
+                "focus": false,
+            }
+        },
+        {
+            "label": "Local - Android arm64-v8a",
+            "type": "shell",
+            "command": "./scripts/build.sh --os android --arch arm64-v8a",
+            "presentation": {
+                "clear": true,
+                "focus": false,
+            }
+        },
+        {
+            "label": "Local - Android x86",
+            "type": "shell",
+            "command": "./scripts/build.sh --os android --arch x86",
+            "presentation": {
+                "clear": true,
+                "focus": false,
+            }
+        },
+        {
+            "label": "Local - Android x86_64",
+            "type": "shell",
+            "command": "./scripts/build.sh --os android --arch x86_64",
+            "presentation": {
+                "clear": true,
+                "focus": false,
+            }
+        },
+        {
+            "label": "Local - Ios arm64-v8a",
+            "type": "shell",
+            "command": "./scripts/build.sh --os ios --arch arm64-v8a",
+            "presentation": {
+                "clear": true,
+                "focus": false,
+            }
+        },
+        {
+            "label": "Local - Ios x86_64",
+            "type": "shell",
+            "command": "./scripts/build.sh --os ios --arch x86_64",
+            "presentation": {
+                "clear": true,
+                "focus": false,
+            }
+        },
+        //Docker
+        {
+            "label": "Docker - Windows x64",
+            "type": "shell",
+            "command": "./scripts/build.sh --os windows --arch x86_64 --docker",
+            "presentation": {
+                "clear": true,
+                "focus": false,
+            }
+        },
+        {
+            "label": "Docker - Windows x86",
+            "type": "shell",
+            "command": "./scripts/build.sh --os windows --arch i686 --docker",
+            "presentation": {
+                "clear": true,
+                "focus": false,
+            }
+        },
+        {
+            "label": "Docker - Linux x64",
+            "type": "shell",
+            "command": "./scripts/build.sh --os linux --arch x86_64 --docker",
+            "presentation": {
+                "clear": true,
+                "focus": false,
+            }
+        },
+        {
+            "label": "Docker - Linux x86",
+            "type": "shell",
+            "command": "./scripts/build.sh --os linux --arch x86 --docker",
+            "presentation": {
+                "clear": true,
+                "focus": false,
+            }
+        },
+        {
+            "label": "Docker - Mac x64",
+            "type": "shell",
+            "command": "./scripts/build.sh --os mac --arch x86_64 --docker",
+            "presentation": {
+                "clear": true,
+                "focus": false,
+            }
+        },
+        {
+            "label": "Docker - Mac x86",
+            "type": "shell",
+            "command": "./scripts/build.sh --os mac --arch x86 --docker",
+            "presentation": {
+                "clear": true,
+                "focus": false,
+            }
+        },
+        {
+            "label": "Docker - Android armeabi-v7a",
+            "type": "shell",
+            "command": "./scripts/build.sh --os android --arch armeabi-v7a --docker",
+            "presentation": {
+                "clear": true,
+                "focus": false,
+            }
+        },
+        {
+            "label": "Docker - Android arm64-v8a",
+            "type": "shell",
+            "command": "./scripts/build.sh --os android --arch arm64-v8a --docker",
+            "presentation": {
+                "clear": true,
+                "focus": false,
+            }
+        },
+        {
+            "label": "Docker - Android x86",
+            "type": "shell",
+            "command": "./scripts/build.sh --os android --arch x86 --docker",
+            "presentation": {
+                "clear": true,
+                "focus": false,
+            }
+        },
+        {
+            "label": "Docker - Android x86_64",
+            "type": "shell",
+            "command": "./scripts/build.sh --os android --arch x86_64 --docker",
+            "presentation": {
+                "clear": true,
+                "focus": false,
+            }
+        },
+        {
+            "label": "Docker - Ios arm64-v8a",
+            "type": "shell",
+            "command": "./scripts/build.sh --os ios --arch arm64-v8a --docker",
+            "presentation": {
+                "clear": true,
+                "focus": false,
+            }
+        },
+        {
+            "label": "Docker - Ios x86_64",
+            "type": "shell",
+            "command": "./scripts/build.sh --os ios --arch x86_64 --docker",
+            "presentation": {
+                "clear": true,
+                "focus": false,
+            }
+        },
     ]
 }

@@ -3,25 +3,45 @@
 # to the root binary directory of the project as ${HELLO_BINARY_DIR}.
 cmake_minimum_required (VERSION 3.10)
 
-set(CMAKE_C_COMPILER "clang-9")
-set(CMAKE_CXX_COMPILER "clang++-9")
+set(CMAKE_C_COMPILER "clang")
+set(CMAKE_CXX_COMPILER "clang++")
 project(jia)
 
 set(C_STANDARD 11)
 set(CXX_STANDARD 14)
 
 if(NOT DEFINED OS)
-    SET(OS "none")
+    message(FATAL_ERROR  "Operation system not defined.")
+endif()
+
+if(NOT DEFINED ARCH)
+    message(FATAL_ERROR  "Architecture not defined.")
 endif()
 
 set(WORKSPACE ${PROJECT_SOURCE_DIR})
 set(CMAKE_BINARY_DIR ${WORKSPACE}/build)
+
 string(TOUPPER ${OS} ${OS})
+
+SET(CUSTOM_BUILD_PARAMS "")
+SET(CUSTOM_LINKER_PARAMS "")
+
 if(${OS} STREQUAL "WINDOWS")
     include(config/windows.cmake)
-else()
-    message(FATAL_ERROR  "Operation system not defined.")
+elseif(${OS} STREQUAL "LINUX")
+    include(config/linux.cmake)
+elseif(${OS} STREQUAL "MAC")
+    include(config/mac.cmake)
+elseif(${OS} STREQUAL "ANDROID")
+    include(config/android.cmake)
+elseif(${OS} STREQUAL "IOS")
+    include(config/ios.cmake)
 endif()
+
+SET(CUSTOM_BUILD_PARAMS "${CUSTOM_BUILD_PARAMS} -Ofast -target ${TARGET}")
+
+SET(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} ${CUSTOM_BUILD_PARAMS}")
+SET(CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${CUSTOM_LINKER_PARAMS}")
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
