@@ -1,0 +1,33 @@
+# CMakeLists files in this project can
+# refer to the root source directory of the project as ${HELLO_SOURCE_DIR} and
+# to the root binary directory of the project as ${HELLO_BINARY_DIR}.
+cmake_minimum_required (VERSION 3.10)
+
+set(CMAKE_C_COMPILER "clang-9")
+set(CMAKE_CXX_COMPILER "clang++-9")
+project(jia)
+
+set(C_STANDARD 11)
+set(CXX_STANDARD 14)
+
+if(NOT DEFINED OS)
+    SET(OS "none")
+endif()
+
+set(WORKSPACE ${PROJECT_SOURCE_DIR})
+set(CMAKE_BINARY_DIR ${WORKSPACE}/build)
+string(TOUPPER ${OS} ${OS})
+if(${OS} STREQUAL "WINDOWS")
+    include(config/windows.cmake)
+else()
+    message(FATAL_ERROR  "Operation system not defined.")
+endif()
+
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(SOURCES
+    ${WORKSPACE}/src/neuron.cpp
+    ${WORKSPACE}/src/main.cpp
+)
+add_executable (jia ${SOURCES})
