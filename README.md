@@ -17,3 +17,9 @@ Opcionais
  - Ios
  - Android
 
+
+
+Docker run
+```
+docker container run -it -v `PWD`:/src --rm jia sh
+```

@@ -5,7 +5,7 @@ cmake_minimum_required (VERSION 3.10)
 
 set(CMAKE_C_COMPILER "clang")
 set(CMAKE_CXX_COMPILER "clang++")
-project(jia)
+project(jia CXX)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -54,8 +54,7 @@ set(SOURCES
     ${WORKSPACE}/src/main.cpp
 )
 
-set(CMAKE_VERBOSE_MAKEFILE ON)
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-set(CMAKE_RULE_MESSAGES off)
+# set(CMAKE_VERBOSE_MAKEFILE ON)
+# set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_executable (jia ${SOURCES})

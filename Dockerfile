@@ -13,4 +13,4 @@ RUN apk add cmake \
     clang-dev \
     mingw-w64-gcc
 
-WORKDIR /src
+WORKDIR /
