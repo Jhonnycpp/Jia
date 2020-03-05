@@ -1,26 +1,17 @@
 #include <iostream>
-#include "neuron.h"
+#include <vector>
 
 using namespace std;
-using namespace Core;
 
 int main()
 {
-    Neurons nn;
-    Neuron n;
-    Neuron d;
-    Neuron *e = new Neuron();
+    vector<int> t;
+    t.push_back(1);
+    t.push_back(2);
+    t.push_back(2);
 
-    e->setWeight(5);
-    n.setWeight(10);
-    d.setWeight(20);
+    for(int it : t)
+        cout << it << endl;
 
-    nn.add(e);
-    nn.add(d);
-    nn.add(n);
-
-    for (auto it : nn)
-        cout << "Peso: " << it->getWeight() << endl;
-    cout << "Hello world!" << endl;
-    return 0;
+    cout << "Hello word" << endl << endl;
 }
