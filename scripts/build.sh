@@ -45,7 +45,7 @@ echo -e "Build to ${COLOR_LIGHT_GREEN}${OS_PARAM}${COLOR_NC} in the arch ${COLOR
 CMD="cmake . -DOS=${OS_PARAM} -DARCH=${ARCH_PARAM} && make -j${PROCESS_PARAM}"
 
 scripts/clean.sh
-
+echo $CMD
 if [[ "${DOCKER_PARAM}" == true ]]; then
     DOCKER_VERSION=$(docker --version)
     DOCKER_VERSION=$(echo $DOCKER_VERSION | tr '[:upper:]' '[:lower:]')
